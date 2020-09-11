@@ -1,4 +1,7 @@
-**Status:** Archive (code is provided as-is, no updates expected)
+## Gym Monitor with xvfb
+
+    xvfb-run -a -s "-screen 0 1400x900x24 +extension RANDR" -- python basic_run.py
+
 
 # Multi-Agent Particle Environment
 
