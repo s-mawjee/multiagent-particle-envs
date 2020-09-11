@@ -2,7 +2,7 @@ import gym
 from gym import Wrapper
 from gym import error, version, logger
 import os, json, numpy as np
-from gym.wrappers.monitoring import stats_recorder, video_recorder
+from .monitoring import stats_recorder, video_recorder
 from gym.utils import atomic_write, closer
 from gym.utils.json_utils import json_encode_np
 
