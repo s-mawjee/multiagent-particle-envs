@@ -4,7 +4,7 @@ from multiagent.scenario import BaseScenario
 
 
 class Scenario(BaseScenario):
-    def make_world(self, number_of_agents=None, number_of_landmarks=None, communication_dim=None):
+    def make_world(self, number_of_agents=None, number_of_landmarks=None, communication_dim=None, agent_silent=True):
         world = World()
         # set any world properties first
         world.dim_c = 2
@@ -24,7 +24,7 @@ class Scenario(BaseScenario):
         for i, agent in enumerate(world.agents):
             agent.name = 'agent %d' % i
             agent.collide = True
-            agent.silent = True
+            agent.silent = agent_silent
             agent.size = 0.15
         # add landmarks
         world.landmarks = [Landmark() for i in range(num_landmarks)]

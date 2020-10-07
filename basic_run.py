@@ -31,6 +31,7 @@ def create_env(
     number_of_agents=None,
     number_of_landmarks=None,
     communication_dim=None,
+    agent_silent=True
 ):
     # load scenario from script
     scenario = scenarios.load(scenario_name + ".py").Scenario()
@@ -62,6 +63,7 @@ if __name__ == "__main__":
     env_ = OneHotEncodeActionWrapper(env_, movement_rate=0.5)
     env_ = TimeLimit(env_, max_episode_steps=50)
 
+    print("action space:", env_.action_space)
     for eps in range(2):
         env = Monitor(
             env_,
